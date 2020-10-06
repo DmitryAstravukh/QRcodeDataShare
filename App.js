@@ -2,7 +2,7 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Home, ContactsList, GeneratedQRCode } from './screens';
+import { Home, ContactsList, GeneratedQRCode, ScannedData } from './screens';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import * as styleVariables from './constants/style-variables';
@@ -35,6 +35,10 @@ const App = () => {
           <Stack.Screen name='GeneratedQRCode' options={{ title: 'Сгенерированный QR код' }}>
             {props => <GeneratedQRCode {...props} />}
           </Stack.Screen> 
+
+          <Stack.Screen name='ScannedData' options={{ title: 'Отсканированные данные' }}>
+            {props => <ScannedData {...props} />}
+          </Stack.Screen>
 
         </Stack.Navigator>
       </NavigationContainer>
